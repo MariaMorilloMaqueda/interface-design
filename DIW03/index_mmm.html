@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos/styles.css" rel="stylesheet">
+    <title>DIW03. María Morillo Maqueda</title>
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-logo">
+            <a href="index_mmm.html"><img src="img/logo.png" alt="logo"></a>
+            <h1>Club Deportivo Aladino de Murcia</h1>
+        </div>
+        <input type="checkbox" id="menu-hamburguesa" class="menu-hamburguesa" aria-hidden="true">
+        <label id="label-menu-hamburguesa" for="menu-hamburguesa" class="icono-hamburguesa" tabindex="1" aria-label="Menú de navegación" aria-controls="menu" aria-expanded="false">
+            <span class="simbolo_barra"></span>
+            <span class="simbolo_barra"></span>
+            <span class="simbolo_barra"></span>
+        </label>
+        <nav id="menu" class="navegacion" aria-label="Enlaces de navegación">
+            <ul class="menu_principal">
+                <li ><div class="pulsador">Club</div>
+                    <ul class="apartado1">
+                        <li><a href="https://wave.webaim.org/extension/">Historia</a></li>
+                        <li><a href="https://wave.webaim.org/">Socios</a></li>
+                    </ul>    
+                </li>
+                <li><div class="pulsador">Noticias</div>
+                    <ul class="apartado2">
+                        <li><a href="https://diegoamorin.com/principios-usabilidad-tognazzini/">Últimas noticas</a></li>
+                        <li><a href="https://diegoamorin.com/10-principios-usabilidad/">Revista</a></li>
+                    </ul> 
+                </li>
+                <li><div class="pulsador">Secciones</div>
+                    <ul class="apartado3">
+                        <li><a href="https://fastercapital.com/es/palabra-clave/navegaci%C3%B3n-consistente.html">Atletismo</a></li>
+                        <li><a href="https://www.uxlumen.com/scroll-y-navegacion-persistente/">Natación</a></li>
+                    </ul>  
+                </li>
+            </ul>
+        </nav>
+        <a class="enlace-login" href="index.html"><img class="header-login" src="img/login.png" alt="login"></a>
+    </header> <!--Final del header-->
+    <script>
+        document.getElementById('label-menu-hamburguesa').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('menu-hamburguesa').click();
+            }
+        });
+    </script>
+    <main class="contenido">
+        <section class="noticias" id="noticias" tabindex="-1">
+            <h2>Noticias</h2>
+            <div class="noticia1">
+                <h3>El Costa del Sol Málaga da un paso grande en Pontinia</h3>
+                <img class="imagen1"src="img/imagen1.jpg" alt="jugadora1">
+                <img class="imagen2" src="img/imagen2.jpeg" alt="jugadora2">
+                <p class="parrafo1">Lucían más los ataques que las defensas en el inicio del choque, con un constante intercambio de golpes.
+                    Le costaba más al equipo de Suso Gallardo, que sufría mucho en seis metros con Eleonora Colloredo. La
+                    pivote hacía daño y con varios goles impulsaba a las italianas (9-6). Un tiempo muerto local les
+                    reactivaba y volvían a coger colchón (14-11). Era el nuevo fichaje Nayra Rodríguez, la que daba ventaja
+                    a las malagueñas (16-17).</p>
+                <p class="parrafo2">Desde la defensa, con dos goles encajados en 10 minutos, arrollaban las panteras. Se pasaba del 16-17 al
+                    19-29. Exhibición de Espe López, indetectable para la defensa italiana. Sumaba, y mucho, su hermana Sole
+                    a la carrera. Intentó un último arreón el ASD Handball Cassa Rurale Pontinia aunque las malagueñas
+                    aguantaron de pie para llevarse una jugosa renta (25-32). Se estrenó Sonora Solano en competición después
+                    de una dilatada trayectoria.</p>
+                <cite class="parrafo5">Escrito por: María Morillo.</cite>
+            </div>
+            <div class="noticia2">
+                <h3>El Aladino de Murcia se cuela en EHF European Cup</h3>
+                <img class="imagen3" src="img/imagen3.jpg" alt="jugadora3">
+                <img class="imagen4" src="img/imagen4.jpg" alt="jugadora4">
+                <p class="parrafo3">El Aladino de Murcia consigue el billete al Last 16 de la EHF European Cup. Una victoria por la
+                    mínima (23-24, 38-56 en el global) en un partido nivelado en la pista del Academia de Sao Pedro do Sul.
+                    Tras 12 encuentros, entre Liga Iberdrola y la competición europea, las aladinas permanecen invictas antes
+                    del parón internacional. Símbolo de supervivencia y de un carácter ganador son las numerosas lesiones
+                    que embellece un balance sobresaliente.</p>
+                <p class="parrafo4">Le costaba encontrar esa defensa pétrea a las aladinas, lo que no le impedía estirar. Había un amago de
+                    escapada con Joana Resende a la cabeza (13-16), pero entonces aparecía la portería del ADA de Sao Pedro
+                    do Sul. Ponía las tablas Sole López y el tanto del triunfo lo dió Elena Valdivia, que pese a sus 17
+                    años aparecía para anotar un gol crucial. Victoria, invictas y clasificación para el Last 16 de la EHF
+                    European Cup. Ahora toca un merecido descanso.</p>
+                <cite class="parrafo5">Escrito por: María Morillo.</cite>
+            </div>            
+        </section>
+        <section class="secciones" id="secciones"  tabindex="-1">
+            <h2>Secciones</h2>
+            <div class="seccion1">
+                <h3>Balonmano</h3>
+                <p>Magia en el balonmano femenino.</a></p>
+                <div class="area-boton"><button class="boton1" type="submit">Ver clasificación</button></div>
+            </div>
+            <div class="seccion2">
+                <h3>Atletismo</h3>
+                <p>Conoce a nuestros atletas de alto rendimiento.</p>
+                <div class="area-boton"><button class="boton2" type="submit">Ver podium</button></div>
+            </div>
+            <div class="seccion3">
+                <h3>Ciclismo</h3>
+                <p>Descubre el mundo del ciclismo en nuestro club.</p>
+                <div class="area-boton"><button class="boton3" type="submit">Ver tours</button></div>
+            </div>
+        </section>
+        <section class="opiniones" id="opiniones"  tabindex="-1">
+            <h2>Opiniones</h2>
+            <div class="opinion1">
+                <h3>Sobre balonmano</h3>
+                <img src="img/opinion1.jpg" alt="avatar">
+                <h4>GoleadorEstelar92:</h4>
+                <p class="comentario" lang="es">¡Increíble remontada del Aladino en los últimos 5 minutos! La pivote estuvo imparable. Este equipo tiene madera de campeón en la EHF European Cup.</p>
+                <p>Español - <abbr title="España">ESP</abbr>.</p>
+                <time datetime="2025-01-08T11:19">08/01/2025 - 11:19</time>
+            </div>
+            <div class="opinion2">
+                <h3>Sobre atletismo</h3>
+                <img src="img/opinion2.jpg" alt="avatar">
+                <h4>Sirvo_y_voleo:</h4>
+                <p class="comentario" lang="es">La nueva pista de tartán del Aladino es una maravilla. Vi a Laura Sánchez batir su récord personal en los 400m. ¡El futuro del atletismo murciano está aquí!</p>
+                <p>Español - <abbr title="España">ESP</abbr>.</p>
+                <time datetime="2025-01-08T11:19">08/01/2025 - 11:19</time>
+            </div>
+            <div class="opinion3">
+                <h3>Sobre ciclismo</h3>
+                <img src="img/opinion3.jpg" alt="avatar">
+                <h4>PedalPower87:</h4>
+                <p class="comentario" lang="en">Aladino Cycling Team dominated the Murcia Grand Prix! Carlos Fuentes was unstoppable on the hills. They're real contenders now!.</p>
+                <p>English - <abbr title="España">ENG</abbr>.</p>
+                <time datetime="2025-01-08T11:19">08/01/2025 - 11:19</time>
+            </div>
+        </section>
+        <form class="formulario" id="formulario" tabindex="-1">
+            <fieldset class="fieldset">
+                <legend><h2>Danos tu opinión</h2></legend>
+                <fieldset>
+                    <legend>Campos Obligatorios</legend>
+                    
+                    <label for="alias">Alias (máximo 12 caracteres):</label>
+                    <input class="obligatorio"type="text" id="alias" name="alias" maxlength="12" placeholder="Introduce tu alias" title="Introduce un alias de máximo 12 caracteres" tabindex="1" required>
+                    <br><br>
+            
+                    <label for="email">Correo electrónico:</label>
+                    <input class="obligatorio" type="email" id="email" name="email" placeholder="Introduce tu email" title="Introduce tu correo electrónico" tabindex="2" required>
+                    <br><br>
+            
+                    <label for="opinion">Opinión (máximo 150 caracteres):</label>
+                    <textarea class="obligatorio" id="opinion" name="opinion" maxlength="150" placeholder="Escribe aquí tu opinión" title="Comparte tu opinión en máximo 150 caracteres" tabindex="3" required></textarea>
+                    <br><br>
+            
+                    <label for="idioma">Idioma:</label>
+                    <select class="obligatorio" id="idioma" name="idioma" tabindex="4" required>
+                        <option value="">Seleccione idioma</option>
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                    </select>
+                    <br><br>
+            
+                    <label for="fecha">Fecha y hora:</label>
+                    <input class="obligatorio" type="datetime-local" id="fecha" name="fecha" tabindex="5" required>
+                    <br><br>
+
+                    <label for="codigo-equipo">Código de equipo (3 números + 2 letras):</label>
+                    <input class="obligatorio" type="text" id="codigo-equipo" name="codigo-equipo" 
+                        maxlength="5" pattern="^\d{3}[A-Za-z]{2}$" 
+                        placeholder="Ej: 123AB" 
+                        title="Debe contener exactamente 3 números seguidos de 2 letras (Ej: 123AB)" 
+                        tabindex="6" required>
+                </fieldset>
+            
+                <fieldset>
+                    <legend>Campos Opcionales</legend>
+                    
+                    <label for="deporte">Seleccione el deporte que va a comentar (opcional): </label>
+                    <input type="checkbox" id="atletismo" name="deporte" value="atletismo" tabindex="6">
+                    <label for="atletismo">Balonmano</label>
+                    <input type="checkbox" id="natacion" name="deporte" value="natacion" tabindex="7">
+                    <label for="natacion">Atletismo</label>
+                    <input type="checkbox" id="ciclismo" name="deporte" value="ciclismo" tabindex="8">
+                    <label for="ciclismo">Ciclismo</label>
+                    <br><br>
+            
+                    <label for="anos_socio">Años de socio:</label>
+                    <input type="number" id="anos_socio" name="anos_socio" min="0" max="70" placeholder="0-70" title="Introduce el número de años como socio (0-70)" tabindex="9">
+                </fieldset>
+
+                <br>
+                <button class="boton-enviar" type="submit">Enviar</button>
+                <button class="boton-cancelar" type="reset">Cancelar</button>
+            </fieldset>
+        </form>
+        <section class="tabla" id="tabla" tabindex="-1">
+            <h2>Estadísticas de venta</h2>
+            <table  summary="Comparativa de precios de equipamiento deportivo para balonmano y atletismo, segregado por género masculino y femenino, incluyendo totales por categoría">
+                <tr>
+                    <th rowspan="2"></th>
+                    <th class="titulo-tabla1" colspan="2">Balonmano</th>
+                    <th class="titulo-tabla2"colspan="2">Atletismo</th>
+                </tr>
+                <tr>
+                    <th class="hombre1">Hombre</th>
+                    <th class="mujer1">Mujer</th>
+                    <th class="hombre2">Hombre</th>
+                    <th class="mujer2">Mujer</th>
+                </tr>
+
+                <tr>
+                    <td class="tipo">Camiseta</td>
+                    <td>1000</td>
+                    <td>1500</td>
+                    <td>1500</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td class="tipo">Pantalón</td>
+                    <td>1500</td>
+                    <td>800</td>
+                    <td>800</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td class="tipo">Zapatillas</td>
+                    <td>400</td>
+                    <td>300</td>
+                    <td>300</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td class="totales">Totales</td>
+                    <td class="totales">2900</td>
+                    <td class="totales">2600</td>
+                    <td class="totales">2600</td>
+                    <td class="totales">2900</td>
+                </tr>
+                <caption>Estadísticas de venta de equipamiento deportivo por género y deporte</caption> <!--Se añade un caption para mejorar la accesibilidad-->
+            </table>
+        </section>
+        <section class="zona-lateral">
+            <nav class="navegacion-lateral">
+                <h2>Navegación</h2>
+                <div class="area-boton-nav"><a href="#noticias" title="va a la zona de noticias">Noticias</a></div>
+                <div class="area-boton-nav"><a href="#secciones" title="va a la zona de secciones">Secciones</a></div>
+                <div class="area-boton-nav"><a href="#opiniones" title="va a la zona de opiniones">Opiniones</a></div>
+                <div class="area-boton-nav"><a href="#formulario" title="va a la zona de formulario">Danos tu opinión</a></div>
+                <div class="area-boton-nav"><a class="boton-tabla" href="#tabla" title="va a la zona de tabla">Estadísticas de venta</a></div>
+            </nav>
+            <div class="galeria">
+                <h3>Galería de imágenes</h3>
+                <figure>
+                    <img class="img-galeria1" src="img/galeria1.jpg" alt="equipo de natación">
+                    <figcaption>Nuestro equipo de natación se prepara para la World Cup</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/galeria2.jpg" alt="equipo de relevos">
+                    <figcaption>El equipo de relevo mixto entrena duro de cara a la final internacional</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/galeria3.jpg" alt="profesionales de crossfit">
+                    <figcaption>Nuestro club en colaboración con los profesionales de Panther Box para la recuperación de lesiones de nuestros atletas</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/galeria4.jpg" alt="eqipo de baloncesto">
+                    <figcaption>El Aladino de Murcia forma el primer equipo de baloncesto femenino desde los origenes del club</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-direccion"> 
+            <h4 class="direccion-titulo">Aladino de Murdia</h4>
+            <p>Avenida del Gallo, s/n.</p>
+            <p>Murcia, Murcia.</p>
+            <p>aladinodemurcia@info.com - +34 684 58 74 21</p>
+        </div> <!--Final del apartado dirección-->
+        <div class="footer-redes"> 
+            <h4 class="redes-titulo">Redes sociales</h4>
+            <a href="https://www.instagram.com/"><img src="img/redes1.png" alt="instagram"></a>
+            <a href="https://x.com/"><img src="img/redes2.png" alt="twitter"></a>
+            <a href="https://www.tiktok.com/"><img src="img/redes3.png" alt="tiktok"></a>
+        </div> <!--Final del apartado de redes-->
+        <div>
+            <form class="footer-formulario">
+                <fieldset>
+                    <legend>Únete a nuestra newsletter</legend>
+                    <input type="email" placeholder="Introduce el email">
+                    <button class="boton-enviar" type="submit">Unirse</button>
+                </fieldset>
+            </form> 
+        </div> <!--Final del formulario-->
+    </footer> <!--Final del footer-->
+</body>
+</html>

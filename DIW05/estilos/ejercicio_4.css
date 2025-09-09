@@ -1,0 +1,34 @@
+/*SECCIÓN 3*/
+.seccion4 {
+    grid-area: seccion4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00D100;
+    color: white;
+    padding: 2% 0 0 0;
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+}
+
+.seccion4 h3 {
+    margin-bottom: 1%;
+}
+
+.seccion4 button {
+    margin: 3% 0;
+    color: white;
+    background-color: #345cdd;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 30%;
+}
+
+/*Lo único que se ha realizado con CSS en este ejercicio ha sido el diseño de la mesa de billar en cuanto a color y bordes.
+El resto, tanto animación como tamaño y la estética del resto de elemento se han hecho con Canvas y JavaScript.*/
+/*#ele_canvas{ 
+    background-color: #008000;
+    color: #008000;
+    border: solid 10px black;
+    border-radius: 5%;
+}*/

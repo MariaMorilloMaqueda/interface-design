@@ -1,0 +1,257 @@
+/*ASPECTOS GENERALES*/
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: 'LatoLocal', sans-serif;
+    src: url(/fuentes/Lato-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #C9C8C5;
+    margin: 0;
+    font-family: 'LatoLocal', sans-serif; /*Manejo de la tipografía para todas los textos esceptuando títulos*/
+    font-weight: normal;
+    color: black;
+    text-align: justify;
+}
+
+h1, h2, h3, h4, legend {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    text-align: center;
+}
+
+a {
+    margin: 0; /*Se quitan los márgenes para controlarlos con flexbox*/
+}
+
+p, li {
+    margin: 0 0 15px 0;
+}
+
+/*CABECERA*/
+.header {
+    background-color: white;
+    display: flex; /*Se distribuye la cabecera con flexbox*/
+    flex-direction: row;
+    justify-content: space-between; /*Se alinean los elementos en el centro con el mismo espacio entre ellos*/
+    align-items: center;
+    padding: 0 20px; 
+}
+
+.header-logo {
+    display: flex; /*Distribución del logo con flexbox,*/
+    flex-direction: row; /*Dirección de las areas en fila*/
+    align-items: center; 
+}
+
+.header-logo a {
+    display: flex;
+    text-decoration: none; 
+}
+
+.header-logo img {
+    width: 68px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/*CABECERA: navegación*/
+.navegacion {
+    display: flex; /*Distribución de la navegación en fila con flexbox,*/
+    align-items: center;
+}
+
+.menu-hamburguesa {
+    display: none;
+}
+
+.icono-hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /*Se utiliza para cambiar la aparencia del cursor del ratón cuando se posiciona sobre un elemento concreto.*/
+}
+
+.icono-hamburguesa span {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.navegacion a {
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: 41px 30px; /*Se expande para que ocupe todo el alto del header*/
+}
+
+.navegacion a:hover {
+    color: white;
+    background-color: #4998A4;
+}
+.seccion1 a {
+    color: white;
+    background-color:#FABB30;
+}
+
+.seccion1 a:hover{
+    background-color: #FAC54D;
+}
+
+.seccion2 a {
+    color: white;
+    background-color: #665EA6;
+}
+
+.seccion2 a:hover {
+    background-color: #746CA6;
+}
+
+.seccion3 a {
+    color: white;
+    background-color: #C62292;
+}
+
+.seccion3 a:hover {
+    background-color: #C73B9B;
+}
+
+.menu_principal > li:hover > a {
+    color: white;
+    background-color: #4998A4;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.menu_principal li {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+}
+
+.menu_principal li a {
+    display: block;
+}
+
+.menu_principal li ul {
+    display: none;
+    position: absolute;
+}
+
+.menu_principal li ul li {
+   margin: 0;
+}
+
+.menu_principal li ul li a {
+    padding: 15px 30px;
+ }
+
+.menu_principal li:hover ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-login {
+    width: 30px; /* Tamaño fijo para el icono */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+}
+
+/*MEDIA QUERY CABECERA*/
+@media screen and (max-width: 620px) {
+    .enlace-login, .header-login {
+        display: none;
+    }
+    
+    .header {
+        flex-wrap: wrap;
+    }
+    
+    .header-logo {
+        order: 1;
+    }
+
+    .header-logo h1 {
+        text-align: left;
+        font-size: 22px;
+    }
+
+    .header-logo img {
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .icono-hamburguesa {
+        display: flex;
+        order: 2;
+    }
+
+    .navegacion {
+        width: 100%;
+        order: 3;
+        display: none;
+    }
+
+    .navegacion a {
+        margin: 0;
+        padding: 15px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .menu-hamburguesa:checked + label + .navegacion {
+        display: flex;
+    }
+
+    .menu_principal,
+    .menu_principal ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .menu_principal li a {
+        padding: 15px;
+    }
+
+    .menu_principal li ul {
+        position: static;
+        width: 100%;
+    }
+
+    .menu_principal li ul li a {
+        padding: 15px 30px;
+        width: 100%;
+    }
+
+    .menu-hamburguesa:checked + label .simbolo_barra:nth-child(1) {
+        background-color: red;
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-hamburguesa:checked + label .simbolo_barra:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-hamburguesa:checked + label .simbolo_barra:nth-child(3) {
+        background-color: red;
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}

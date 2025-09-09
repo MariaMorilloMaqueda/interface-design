@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos/styles-menu.css" rel="stylesheet">
+    <title>Menú principal y navegación</title>
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-logo">
+            <a href="#"><img src="img/logo.png" alt="logo"></a>
+            <h1>Club Deportivo Aladino de Murcia</h1>
+        </div>
+        <input type="checkbox" id="menu-hamburguesa" class="menu-hamburguesa" aria-hidden="true">
+        <label id="label-menu-hamburguesa" for="menu-hamburguesa" class="icono-hamburguesa" tabindex="1" aria-label="Menú de navegación" aria-controls="menu" aria-expanded="false">
+            <span class="simbolo_barra"></span>
+            <span class="simbolo_barra"></span>
+            <span class="simbolo_barra"></span>
+        </label>
+        <nav id="menu" class="navegacion" aria-label="Enlaces de navegación">
+            <ul class="menu_principal">
+                <li><a href="#" accesskey="c">Club</a>
+                    <ul class="seccion1">
+                        <li><a href="https://wave.webaim.org/extension/" target="_blank" accesskey="h" title="Extensión sobre accesibilidad">Historia</a></li>
+                        <li><a href="https://wave.webaim.org/" target="_blank" accesskey="o" title="herramienta de validación sobre accesibilidad">Socios</a></li>
+                    </ul>    
+                </li>
+                <li><a href="#" accesskey="n">Noticias</a>
+                    <ul class="seccion2">
+                        <li><a href="https://diegoamorin.com/principios-usabilidad-tognazzini/" target="_blank" accesskey="u" title="Principios de usabilidad de tognazzini">Últimas noticas</a></li>
+                        <li><a class="seccion2" href="https://diegoamorin.com/10-principios-usabilidad/" target="_blank" accesskey="r" title="Principios de Jakob Nielsenn">Revista</a></li>
+                    </ul> 
+                </li>
+                <li><a href="#" accesskey="s">Secciones</a>
+                    <ul class="seccion3">
+                        <li><a href="https://fastercapital.com/es/palabra-clave/navegaci%C3%B3n-consistente.html" target="_blank" accesskey="a" title="Consistencia en la navegación">Atletismo</a></li>
+                        <li><a href="https://www.uxlumen.com/scroll-y-navegacion-persistente/" target="_blank" accesskey="t" title="Persistencia en la navegación">Natación</a></li>
+                    </ul>  
+                </li>
+            </ul>
+        </nav>
+        <a class="enlace-login" href="#"><img class="header-login" src="img/login.png" alt="login"></a>
+    </header> <!--Final del header-->
+    <script>
+        document.getElementById('label-menu-hamburguesa').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.getElementById('menu-hamburguesa').click();
+            }
+        });
+    </script>
+</body>
+</html>

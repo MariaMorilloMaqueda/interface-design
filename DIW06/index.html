@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 6</title>
+
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <!-- JQUERY -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/archivo.js"></script>
+</head>
+<body>
+    <header id="logo">
+        <img src="imagenes/logo_ies_aguadulce.png"/>
+    </header>
+    <div id="cabecera">
+        <h1>Liga de deportes</h1>
+        <div id="info_iconos">
+            <img src="imagenes/chat.png" />
+            <img src="imagenes/campana.png" />
+        </div>
+        <img id="avatar" src="imagenes/avatar.png" />
+    </div>
+    <nav>
+        <div>
+            <div id="usuario">
+                <span>Usuario</span>
+                <img id="boton_config" class="icono_menu" src="imagenes/config.png" />
+            </div>
+            <div id="modificar_usuario">
+                <div>
+                    <input type="text" />
+                    <button id="boton_modificar_usuario">&#10003;</button>
+                    <button id="boton_cancelar_usuario">&#x2715;</button>
+                </div>
+              </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="#">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Clasificación</a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>Estilos cabecera</span>
+                    <img class="icono_menu" src="imagenes/flecha_abajo.png" />
+                </a>
+                <ul id="opciones_estilos">
+                    <li>
+                        <span>Color fondo</span>
+                        <input type="color" id="input_color_fondo">
+                    </li>
+                    <li>
+                        <span>Fuente</span>
+                        <select id="select_fuente">
+                            <option value="Arial">Arial</option>
+                            <option value="Calibri">Calibri</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>Tamaño texto</span>
+                        <input type="number" name="input_tamano_texto" id="input_tamano_texto" max="64" min="32" size="3">
+                    </li>
+                    <li>
+                        <span>Filtro logo</span>
+                        <input type="checkbox" name="input_filtro_avatar" id="input_filtro_avatar">
+                    </li>
+                    <li>
+                        <input type="button" id="boton_aplicar_estilos" class="boton" value="Aplicar">
+                        <input type="button" id="boton_reset_estilos" class="boton" value="Reset">
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="control_clasificacion">
+            <div id="migas_de_pan">
+                <img src="imagenes/ocultar.png">
+                <p>DIW > Tarea 6 > <span>Inicio</span></p>
+            </div>
+            <img src="imagenes/vista.png">
+        </div>
+        <section id="vista_inicio">
+            <div id="imagenes_slider">
+                <img src="imagenes/DIW-1.png">
+                <img src="imagenes/DIW-2.png">
+                <img src="imagenes/DIW-3.png">
+            </div>
+            <div id="botones_slider">
+                <img class="botones_slider" src="imagenes/anterior.png">
+                <span class="imagen_activa">&#149;</span>
+                <span>&#149;</span>
+                <span>&#149;</span>
+                <img class="botones_slider" src="imagenes/siguiente.png">
+            </div>
+        </section>
+        <section id="vista_clasificacion">
+            <article id="ventana_clasificacion">
+                <header>
+                    <span>Clasificación</span>
+                    <img id="minimizar_clasificacion" src="imagenes/minimizar.png">
+                </header>
+                <div id="clasificacion">
+                    <select id="jornadas">
+                        <option value="1">Jornada 1</option>
+                        <option value="2">Jornada 2</option>
+                        <option value="3">Jornada 3</option>
+                    </select>
+                    <!-- JORNADA 1-->
+                        <table id="jornada_1">
+                            <caption>Jornada 1</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Equipo</th>
+                                    <th scope="col">PTS</th>
+                                    <th scope="col">PJ</th>
+                                    <th scope="col">PG</th>
+                                    <th scope="col">PE</th>
+                                    <th scope="col">PP</th>
+                                    <th scope="col">GF</th>
+                                    <th scope="col">GC</th>
+                                    <th scope="col">DG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">1</th><td>Baloncesto</td><td>3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>5</td><td>1</td><td>+4</td></tr>
+                                <tr><th scope="row">2</th><td>Taekwondo</td><td>3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>0</td><td>+3</td></tr>
+                                <tr><th scope="row">3</th><td>Rugby</td><td>3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td><td>1</td><td>+2</td></tr>
+                                <tr><th scope="row">4</th><td>Tenis</td><td>3</td><td>1</td><td>1</td><td>0</td><td>0</td><td>2</td><td>1</td><td>+1</td></tr>
+                                <tr><th scope="row">5</th><td>Balonmano</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>2</td><td>-1</td></tr>
+                                <tr><th scope="row">6</th><td>Hockey</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>3</td><td>-2</td></tr>
+                                <tr><th scope="row">7</th><td>Surf</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>3</td><td>-3</td></tr>
+                                <tr><th scope="row">8</th><td>Golf</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>5</td><td>-4</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><th scope="row" class="sin_borde"></th><td class="sin_borde"></td><td class="sin_borde"></td><td class="sin_borde"></td><td>4</td><td>0</td><td>4</td><td>16</td><td>16</td><td>0</td></tr>
+                            </tfoot>
+                        </table>
+
+                    <!-- JORNADA 2-->
+                        <table id="jornada_2">
+                            <caption>Jornada 2</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Puesto</th>
+                                    <th scope="col">Equipo</th>
+                                    <th scope="col">PTS</th>
+                                    <th scope="col">PJ</th>
+                                    <th scope="col">PG</th>
+                                    <th scope="col">PE</th>
+                                    <th scope="col">PP</th>
+                                    <th scope="col">GF</th>
+                                    <th scope="col">GC</th>
+                                    <th scope="col">DG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">1</th><td>Baloncesto</td><td>6</td><td>2</td><td>2</td><td>0</td><td>0</td><td>7</td><td>1</td><td>+6</td></tr>
+                                <tr><th scope="row">2</th><td>Taekwondo</td><td>6</td><td>2</td><td>2</td><td>0</td><td>0</td><td>4</td><td>0</td><td>+4</td></tr>
+                                <tr><th scope="row">3</th><td>Rugby</td><td>4</td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>2</td><td>+2</td></tr>
+                                <tr><th scope="row">4</th><td>Tenis</td><td>3</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td></tr>
+                                <tr><th scope="row">5</th><td>Balonmano</td><td>1</td><td>2</td><td>0</td><td>1</td><td>1</td><td>3</td><td>4</td><td>-1</td></tr>
+                                <tr><th scope="row">6</th><td>Surf</td><td>1</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>-3</td></tr>
+                                <tr><th scope="row">7</th><td>Golf</td><td>1</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>6</td><td>-4</td></tr>
+                                <tr><th scope="row">8</th><td>Hockey</td><td>0</td><td>2</td><td>0</td><td>0</td><td>2</td><td>1</td><td>5</td><td>-4</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><th scope="row" class="sin_borde"></th><td class="sin_borde"></td><td class="sin_borde"></td><td class="sin_borde"></td><td>6</td><td>4</td><td>6</td><td>25</td><td>25</td><td>0</td></tr>
+                            </tfoot>
+                        </table>
+
+                    <!-- JORNADA 3 -->
+                        <table id="jornada_3">
+                            <caption>Jornada 3</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Puesto</th>
+                                    <th scope="col">Equipo</th>
+                                    <th scope="col">PTS</th>
+                                    <th scope="col">PJ</th>
+                                    <th scope="col">PG</th>
+                                    <th scope="col">PE</th>
+                                    <th scope="col">PP</th>
+                                    <th scope="col">GF</th>
+                                    <th scope="col">GC</th>
+                                    <th scope="col">DG</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">1</th><td>Taekwondo</td><td>9</td><td>3</td><td>3</td><td>0</td><td>0</td><td>5</td><td>0</td><td>+5</td></tr>
+                                <tr><th scope="row">2</th><td>Baloncesto</td><td>7</td><td>3</td><td>2</td><td>1</td><td>0</td><td>8</td><td>2</td><td>+6</td></tr>
+                                <tr><th scope="row">3</th><td>Rugby</td><td>5</td><td>3</td><td>1</td><td>2</td><td>0</td><td>5</td><td>3</td><td>+2</td></tr>
+                                <tr><th scope="row">4</th><td>Tenis</td><td>4</td><td>3</td><td>1</td><td>1</td><td>1</td><td>3</td><td>3</td><td>0</td></tr>
+                                <tr><th scope="row">5</th><td>Hockey</td><td>3</td><td>3</td><td>1</td><td>0</td><td>2</td><td>2</td><td>5</td><td>-3</td></tr>
+                                <tr><th scope="row">6</th><td>Surf</td><td>2</td><td>3</td><td>0</td><td>2</td><td>3</td><td>3</td><td>6</td><td>-3</td></tr>
+                                <tr><th scope="row">7</th><td>Balonmano</td><td>1</td><td>3</td><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>-2</td></tr>
+                                <tr><th scope="row">8</th><td>Golf</td><td>1</td><td>3</td><td>0</td><td>1</td><td>2</td><td>2</td><td>7</td><td>-5</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr><th scope="row" class="sin_borde"></th><td class="sin_borde"></td><td class="sin_borde"></td><td class="sin_borde"></td><td>8</td><td>8</td><td>8</td><td>31</td><td>31</td><td>0</td></tr>
+                            </tfoot>
+                        </table>
+                </div>
+            </article>
+            <article id="ventana_comparacion">
+                <header>
+                    <span>Comparación</span>
+                    <img id="minimizar_comparacion" src="imagenes/minimizar.png">
+                </header>
+                <div id="comparacion">
+                    <table>
+                        <thead>
+                            <tr class="icono_deporte">
+                                <td>&nbsp;</td>
+                                <th scope="col"><img src="imagenes/equipos/icono.png"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">EQ</th><td></td></tr>
+                            <tr><th scope="row">PTS</th><td></td></tr>
+                            <tr><th scope="row">PJ</th><td></td></tr>
+                            <tr><th scope="row">PG</th><td></td></tr>
+                            <tr><th scope="row">PE</th><td></td></tr>
+                            <tr><th scope="row">PP</th><td></td></tr>
+                            <tr><th scope="row">GF</th><td></td></tr>
+                            <tr><th scope="row">GC</th><td></td></tr>
+                            <tr><th scope="row">DG</th><td></td></tr>
+                        </tbody>
+                        <tfoot>
+                            <td class="sin_borde"></td>
+                            <th scope="col"><img src="imagenes/borrar.png"></th>
+                        </tfoot>
+                      </table>
+                </div>
+            </article>
+        </section>
+    </main> 
+    <footer>
+        <a href="#">Diseño de Interfaces Web</a>
+    </footer>
+</body>
+</html>

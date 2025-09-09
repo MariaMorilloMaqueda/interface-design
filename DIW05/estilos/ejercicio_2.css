@@ -1,0 +1,123 @@
+/*TRANSICIÓN EN EL MENÚ*/
+/*Para una transición poco exagerada se han utilizado simplemente colores tanto del fondo como de los textos.
+EL texto y el fondo cambiar de color progresivamente al pasar el ratón por encima.*/
+.pulsador1:hover {
+    transition: color 1.5s ease, background-color 1.5s ease;
+    color: white;
+    background-color:#345cdd;
+}
+
+/*SECCIÓN2*/
+.seccion2 {
+    grid-area: seccion2;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    padding: 2% 0 0 0;
+    border-top: solid 1px black;
+    border-right: solid 1px black;
+}
+
+.seccion2 h3 {
+    grid-row: 1;
+    grid-column: 1/ span 3;
+}
+
+.boton1 {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+}
+
+.boton2 {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: center;
+}
+
+.boton3 {
+    grid-row: 2;
+    grid-column: 3;
+    justify-self: center;
+}
+
+/*Para crear la bola se ha utilizado un elemento div y se le ha dado forma empleando colores, medidas y bordes.*/
+#bola {
+    grid-row: 3;
+    grid-column: 1/ span 3;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:white;
+    width: 30px;
+    height: 30px;
+    border: solid 25px black;
+    border-radius: 50%;
+    transition: all 3s ease;
+}
+
+/*TRANSICIÓN*/
+/*Se realiza la transición mediante :active, de forma que al pulsar la bola esta cambie a una mesa de billar*/
+#bola:active {
+    background-color: #008000;
+    color: #008000;
+    width: 200px;
+    height: 100px;
+    border: solid 10px black;
+    border-radius: 5%;
+    transition: all 3s ease-in;
+}
+
+.seccion2 p {
+    grid-row: 4;
+    grid-column: 1/ span 3;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    font-size: smaller;
+    line-height: 25px;
+    border: solid 1px #000000;
+    width: 60%;
+    height: 25px;
+}
+
+.seccion2 button {
+    color: white;
+    background-color: #345cdd;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 120px;
+    height: 22px;
+    display: inline-block;
+}
+
+/*TRANSFORMACIONES*/
+/*Para realizar las transformaciones empleando botones se ha utilizado el pseudoelemento .has que permite
+seleccionar un elemento padre en función de los selectores que se estén seleccionando. De esta forma,
+se pueden aplicar todas las transformaciones.*/
+
+.seccion2:has(.boton1:focus) #bola {
+    transform: scale(0.5,0.5);
+}
+
+.seccion2:has(.boton2:focus) #bola {
+    transform: translate(-200px, 50px);
+}
+
+.seccion2:has(.boton3:focus) #bola {
+    transform: translate(200px, 0) rotate(150deg);
+}
+
+.seccion2:has(.boton1:focus) p::after {
+    content: "transform: scale(0.5,0.5)";
+}
+
+.seccion2:has(.boton2:focus) p::after {
+    content: "transform: translate(-200px, 50px)";
+}
+
+.seccion2:has(.boton3:focus) p::after {
+    content: "transform: translate(200px, 0) rotate(150deg)";
+}

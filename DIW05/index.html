@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilos/ejercicio_1.css" rel="stylesheet">
+    <link href="estilos/ejercicio_2.css" rel="stylesheet">
+    <link href="estilos/ejercicio_3.css" rel="stylesheet">
+    <link href="estilos/ejercicio_4.css" rel="stylesheet">
+    <title>DIW05. María Morillo Maqueda</title>
+</head>
+<body>
+    <header class="header"> 
+        <h1>María Morillo Maqueda</h1>
+        <img class="avatar" src="img/avatar.png" alt="avatar">
+    </header> <!--Final del header-->
+    <nav class="navegacion" aria-label="Enlaces de navegación">
+        <a class="pulsador1" href="#seccion2" accesskey="f" title="Acceso a la sección de transformaciones">Transformaciones (CSS - TF)</a>
+        <a class="pulsador1" href="#seccion2" accesskey="t" title="Acceso a la sección de transiciones">Transiciones (CSS - TS)</a>
+        <a class="pulsador1" href="#seccion3" accesskey="c" title="Acceso a la sección de animaciones CSS">Animaciones CSS (CSS)</a>
+        <a class="pulsador1" href="#seccion4" accesskey="n" title="Acceso a la sección de animaciones Canvas">Animaciones Canvas (Canvas)</a>
+        <a class="pulsador1" href="#seccion5" accesskey="s" title="Acceso a la sección de animaciones SVG">Animaciones SVG (SVG)</a>
+    </nav>
+    <div class="seccion2" id="seccion2" tabindex="-1">
+        <h3>Transformaciones y transiciones</h3>
+        <button class="boton1" type="submit">Escalado</button>
+        <button class="boton2" type="submit">Desplazamiento</button>
+        <button class="boton3" type="submit">Rotación</button>
+        <div id="bola">
+            <h4>7</h4>
+        </div>
+        <p></p>
+    </div>
+    <div class="seccion3" id="seccion3" tabindex="-1">
+        <h3>Animaciones CSS</h3>
+        <div id="mesa">
+            <div id="blanca">
+                <p>7</p>
+            </div>
+            <div id="roja">
+                <p>2</p>
+            </div>
+            <p id="mensaje">¡CARAMBOLA!</p>
+            <div id="taco">
+                <div id="punta"></div>
+                <div id="palo"></div>
+                <div id="mango"></div>
+            </div>
+        </div>
+        <div class="botones">
+            <button id="reanudar">Reanudar</button>
+            <button id="parar">Parar</button>
+        </div>
+    </div>
+    <script src="js/ejercicio_3.js"></script>
+    <div class="seccion4" id="seccion4" tabindex="-1"> <!--Dentro del contenedor principal se añade una mesa de billar con canvas y un botón (además del título) que se animarán con JavaScript-->
+        <h3>Animaciones Canvas</h3>
+        <canvas id="ele_canvas" width="415" height="215"></canvas>
+        <button id="iniciar">Iniciar Animación</button>  
+    </div>
+    <script src="js/ejercicio_4.js"></script>
+    <div class="seccion5" id="seccion5" tabindex="-1">
+        <h3>Animaciones SVG</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="415" height="215"> <!--Define el lienzo principal de 415 px de ancho y 215 px de alto.-->
+            <rect width="415" height="215"  fill="#008000" stroke="#FF0000" stroke-width=15 /> <!-- Representa un rectágu verde con borde rojo (será la mesa de billar), tiene el mismo tamaño que el lienzo principal-->
+            <!-- Se diseñan círculos de igual tamaño (radio de 14px) con diferentes colores (fill) y bordes negros (stroke) que representan las bolas -->
+            <circle cx=60 cy=170 r=14 stroke="black" stroke-width=2 fill="#FF0000" > <!-- (bola roja) El primer círculo se encuentra en la posición x=60 e y=170 -->
+                <!-- Este círculo se desplaza en línea recta desde (0, 0) a (100, -15) en 1 segundo -->
+                <animateTransform
+                    id="RotaRoja"
+                    attributeType="XML" 
+                    attributeName="transform" 
+                    type="translate"
+                    from ="0,0"
+                    to="100, -15" 
+                    begin="click"
+                    dur="1s" 
+                    fill="freeze" />	
+            </circle>
+            <circle cx=180 cy=150 r=14 stroke="black" stroke-width=2 fill="#345cdd" > <!-- (bola azul) El segundo círculo se encuentra en la posición x=180 e y=150 -->
+                <!-- Este círculo se desplaza en línea recta desde (0, 0) a (210, -40) en 2 segundos, comenzando 1 segundo después -->
+                <animateTransform
+                    attributeType="XML" 
+                    attributeName="transform" 
+                    type="translate"
+                    from ="0,0"
+                    to="185, -40" 
+                    begin="RotaRoja.end"
+                    dur="2s" 
+                    fill="freeze" />
+            </circle>
+            <circle cx=110 cy=105 r=14 stroke="black" stroke-width=2 fill="#FABB30" > <!-- (bola amarilla) El tercer círculo se encuentra en la posición x=110 e y=105 -->
+                <!-- Este último se traslada en círculo desde 0° hasta 180° alrededor de un punto específico en 3 segundos: partiendo desde la posición base (110 105) hasta (210, 100) -->
+                <animateTransform
+                    id="rotacion"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 110 105"
+                    to="180 210 100"
+                    dur="3s"
+                    end="click"
+                    repeatCount="freeze" />
+                <!-- Cuando finaliza la rotación, el círculo vuelve a desplazarse en línea recta desde (200, -10) a (255, -10) en 1 segundo -->
+                <animateTransform
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="translate"
+                    from="200 -10"
+                    to="282 -10"    
+                    begin="rotacion.end"
+                    dur="1s"
+                    fill="freeze"/>
+            </circle>
+            <!-- Se diseña un texto con fuente personalizada, color rojo y borde blanco -->
+            <text x=205 y=190 font-size="30" style="font-family:'LatoLocal', sans-serif; fill:#FF0000; stroke:#FFFFFF; stroke-width:0.5; letter-spacing:5; word-spacing:10;" >Jugada 12</text>
+            <!-- Se diseñan dos líneas con el mísmo estilo punteado (stroke-dasharray)-->
+            <!-- La primera línea comienza en el punto (120, 85). C representa una línea curva de Bézier, los puntos (170, 20) y (240, 20) determian la forma de la curva. la línea termina en el punto (290, 95) -->
+            <path d="M120 85 C170 20 240 20 290 95" style="stroke:#FFFFFF; stroke-width:3; fill:none;" stroke-dasharray="3"></path>
+            <!-- La segunda línea comienza en el punto donde termina la anterior (290, 95), simulando que se trata de una sola línea. H representa una línea recta horizontal, la línea termina en el el punto x=410 e y se mantiene en el mismo punto -->
+            <path d="M290 95 H410" style="stroke:#FFFFFF; stroke-width:3; fill:none;" stroke-dasharray="3"></path>
+        </svg>
+    </div>
+    <footer class="footer">
+        <div class="footer-autoria">
+            <h4>María Morillo Maqueda</h4>
+            <p>Esta página web es la única oficial de María Morillo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
